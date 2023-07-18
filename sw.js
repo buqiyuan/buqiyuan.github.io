@@ -1,7 +1,12 @@
+const excludes = ['/assets/', '/buqiyuan/']
+
 self.addEventListener('fetch', function (event) {
   // 拦截请求
   const { hostname, origin, pathname, search } = new URL(event.request.url)
-  if (hostname === 'buqiyuan.gitee.io') {
+  if (
+    hostname === 'buqiyuan.gitee.io' &&
+    !excludes.some((n) => pathname.startsWith(n))
+  ) {
     const newUrl = `${origin}/buqiyuan${pathname}${search}`
     event.respondWith(fetch(newUrl))
   }
