@@ -1,4 +1,0 @@
-[submodule "vue3-antdv-admin"]
-	path = vue3-antdv-admin
-	url = https://github.com/buqiyuan/vue3-antdv-admin.git
-	branch = gh-pages
